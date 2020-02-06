@@ -1,0 +1,20 @@
+{
+  "name": "node-api-postgres",
+  "version": "1.0.0",
+  "description": "",
+  "main": "new.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec abel-node app.js "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^7.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
