@@ -1,6 +1,7 @@
 const express = require('express');
 const {Client} = require('pg');
 //const chalk = require('chalk');
+
 const app = express();
 app.use(express.json());
 const client = new Client({
@@ -16,9 +17,11 @@ app.get('/jobListing', async (req,res) => {
         
         const jobs = await findJobs();
         res.send(JSON.stringify(jobs));
+        res.statusCode=200;
     }
     catch(e){
         res.send('error');
+        res.statusCode=404;
         // console.log(`Error occoured : ${e}`);
     }
 });
@@ -28,9 +31,11 @@ app.get('/jobskill', async (req,res) => {
         const skill = req.params.reqskill;
         const jobs = await findJobsBySkill(skill);
         res.send(JSON.stringify(jobs));
+        res.statusCode=200;
     }
     catch(e){
         res.send('error');
+        res.statusCode=404;
         
     }
 });
@@ -53,7 +58,7 @@ app.post('/addJob', async (req,res) => {
     try{
         console.log("Request to add a job posting received!");
         const reqJSON = req.body;
-        await createJob(reqJSON)
+        await createJob(reqJSON);
         result.success = true;
     }
     catch(e){
@@ -68,6 +73,29 @@ app.post('/addJob', async (req,res) => {
     else console.log('Job posting not successfull!!');
     console.log(res.statusCode);
 });
+//add candidate
+app.put('/enter', async (req,res) => {
+    let result = {};
+    try{
+        console.log("Request to add a candidate received!");
+        const reqJSON = req.body;
+        await login(reqJSON);
+        result.success = true;
+    }
+    catch(e){
+        result.success = false;
+        console.log(e);
+    }
+    finally{
+        res.setHeader("content-type", "application/json");
+        res.send(JSON.stringify(result));
+    }
+    if(result.success) console.log('candidate created Successfully');
+    else console.log('candidate not successfull!!');
+    res.statusCode=200;
+    console.log(res.statusCode);
+});
+
 start();
 //Functions
 async function start(){
@@ -83,13 +111,14 @@ async function connect() {
 }
 async function createJob(jobJSON){
     try {
-        await client.query("insert into api1.job (JP,Sal,Location,rid) values ($1,$2,$3,$4);", [jobJSON.JP, jobJSON.Sal, jobJSON.Location, jobJSON.rid]);
-        return true
+        await client.query("insert into api1.job (JP,Sal,location,rid,reqskill) values ($1,$2,$3,$4,$5);", [jobJSON.JP, jobJSON.Sal, jobJSON.location, jobJSON.rid, jobJSON.reqskill]);
+        return true;
         }
         catch(e){
             return false;
         }
 }
+
 async function findJobs(){
     try{
         const results = await client.query("select * from api1.job;");
@@ -117,4 +146,18 @@ async function jobcan(skill){
             return [];
         }
 }
+async function login(inp,user){
+    async function createJob(jobJSON){
+        try {
+            await client.query("insert into api1.personal (name,pass,ccid) values ($1,$2,$3);", [jobJSON.name, jobJSON.pass,jobJSON.ccid]);
+            //await client.query("insert into api1.candidate (name,email,skill) values ($4,$5,$6);"[jobJSON.name,jobJSON.email,jobJSON.skill]);
+            return true;
+            }
+            catch(e){
+                return false;
+            }
+    }
+}
+
+
 app.listen(4000, () => console.log('Server startted on localhost:4000'));
