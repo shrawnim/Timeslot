@@ -1,9 +1,15 @@
+const knex=require(knex);
 const express = require('express');
+const router = express.Router();
 const {Client} = require('pg');
+const morgan=require('morgan');
+const mongoose =require('mongoose');
 //const chalk = require('chalk');
 
 const app = express();
 app.use(express.json());
+mongoose.connect('http//:localhost:4000/jobs');
+app.use(morgan("combined"));
 const client = new Client({
     user: "postgres",
     password: "root",
@@ -74,11 +80,11 @@ app.post('/addJob', async (req,res) => {
     console.log(res.statusCode);
 });
 //add candidate
-app.put('/enter', async (req,res) => {
+app.put('/enter', async(req,res) => {
     let result = {};
     try{
         console.log("Request to add a candidate received!");
-        const reqJSON = req.body;
+        let reqJSON = req.body;
         await login(reqJSON);
         result.success = true;
     }
@@ -90,11 +96,32 @@ app.put('/enter', async (req,res) => {
         res.setHeader("content-type", "application/json");
         res.send(JSON.stringify(result));
     }
-    if(result.success) console.log('candidate created Successfully');
+    if(result.success) console.log('candydate created Successfully');
     else console.log('candidate not successfull!!');
     res.statusCode=200;
     console.log(res.statusCode);
 });
+//page initiation
+router.get('/jobs',async(req,res)=>{
+    let limit: parseInt(req.query.limit)
+    let skip:parseInt(req.query.skip)
+    const match={}
+        try{
+        const jobs = await findJobs();
+        res.send(JSON.stringify(jobs));
+        await res.job({
+            path:'jobs',
+            match,
+            options:{
+                limit: parseInt(req.query.limit),
+                skip:parseInt(req.query.skip)
+            }
+       }).exePopulate()
+       res.send(req.jobs)
+    }catch(e){
+        res.status(500).send()
+    }
+})
 
 start();
 //Functions
@@ -149,7 +176,14 @@ async function jobcan(skill){
 async function login(inp,user){
     async function createJob(jobJSON){
         try {
-            await client.query("insert into api1.personal (name,pass,ccid) values ($1,$2,$3);", [jobJSON.name, jobJSON.pass,jobJSON.ccid]);
+           const pers=[ name =jobJSON.name,
+                        pass = jobJSON.pass,
+                         ccid=jobJson.ccid] = await client.query("insert into api1.personal (name,pass,ccid) values ($1,$2,$3);", [jobJSON.name, jobJSON.pass,jobJSON.ccid]);
+            knex('pers').insert(api1.personal).then(()=> console.log("data inserted"))
+                 .catch((err)=>{ console.log(err); throw err})
+                 .finally(()=>{
+                     knex.destroy();
+                 });
             //await client.query("insert into api1.candidate (name,email,skill) values ($4,$5,$6);"[jobJSON.name,jobJSON.email,jobJSON.skill]);
             return true;
             }
