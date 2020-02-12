@@ -1,0 +1,94 @@
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<body>
+<nav class="w3-bar w3-black" align= center >
+  <h2>US 1</h2>
+  </nav>
+
+<div >
+  <h2>Add Expense details</h2>
+</div>
+  <h3>  Billing</h3>
+</div>
+<form >  
+  <label>CLIENT :</label>
+  <select id="cli">
+   <option value="op1">Op1</option>
+   <option value="op2">Op2</option>
+   <option value="op3">Op3</option>
+</select>
+</form>
+<br>
+
+<form>     
+  <label>Expense Category</label><br><br>
+  <input  type="radio" name="CAT" value="food">Food
+  <input type="radio" name="CAT" value="travel">Travel
+  <input  type="radio" name="CAT" value="Stay">Stay
+  <input type="radio" name="CAT" value="others">Others<br>
+<p></p>
+ <label>Remarks</label>
+   <input type="text" name="CAt" value=" ">
+<p></p>
+</form>
+
+<form  action="/action_page.php"> 
+  <label> Bill and Invoice </label><br>   
+  <label for="myfile">Select a file:</label>
+  <input type="file" id="myfile" name="myfile" multiple>
+<p></p>
+</form>
+
+<form >     
+  <label>Bill date</label>
+   <input type="date" name="billd">
+  <label>Amount</label>
+   <input type="text" name="amt" value=" ">
+</form><p></p>
+<h3>Food</h3>
+<form>     
+  <label>No of Dinners</label>
+  <input type="text">
+<p></p>
+</form>
+<h3>Travel</h3>
+<form>  
+  <label>Mode of transport:</label>
+  <select id="mod">
+   <option value="cab">cab</option>
+   <option value="train">Train</option>
+   <option value="bus">Bus</option>
+ <option value="Flight">Flight</option>
+   <option value="others">others</option>
+</select><br><br>   
+  <label>From :</label>
+  <input type="text"><br><br>
+<label> To    :</label>
+  <input type="text">
+<p></p>
+</form>
+<h3>Stay</h3>
+<form>  
+  <label>From date:</label>
+   <input type="date" name="hod">
+  <label>To date:</label>
+   <input type="date" name="hod"><br><br>  
+  <label>Place of Stay:</label>
+  <input type="text"><br><br>
+<label> Destination :</label>
+  <input type="text">
+<p></p>
+</form>
+<p></p>
+<div>
+  <input type="button" value="Submit">
+  <input type="button" value="Cancel">
+  <p></p>
+ </div>
+<p></p>
+</body>
+<html>
