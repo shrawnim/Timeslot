@@ -1,0 +1,210 @@
+<html>
+    <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    </head>
+<body>
+    <style>
+        body {
+          font-family: "Lato", sans-serif;
+        }
+        
+        .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          background-color: #111;
+          oSrflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+          float: right;
+          text-align: right;
+          right: 0;
+        }
+
+        .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
+        
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+        </style>
+    <nav class="w3-bar w3-black">
+        <a href="#myapp" class="w3-button w3-bar-item">Myapplication</a>
+        <a href="#profile" class="w3-button w3-bar-item">Profile</a>
+        <a href="#job" class="w3-button w3-bar-item">JOB</a>
+        <a href="#contact" class="w3-button w3-bar-item">Contact</a>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+          </div>
+          <span style="font-size:30px;cursor:pointer;float:right" onclick="openNav()">&#9776;</span>
+    </nav>
+    <fieldset style="background-color: rgba(10, 205, 240, 0.849);">
+        <legend align="center"><div class="ui centered card">
+            <div class="image">
+              <img src="kristy.png">
+            </div>
+            <div class="content">
+              <a class="header">Elyse</a>
+            </div>
+          </div></legend>
+          <br><br>
+          <div class="ui two column centered grid">
+            <div class="five wide column centered">
+                <h2>Work Experience</h2>
+                bio-data of the user.
+                Development
+                Description
+                BEST USER PROFILE & MEMBERSHIP PLUGIN FOR WORDPRESS
+                Ultimate Member is the #1 user profile & membership plugin
+            </div>
+              <div class="five wide column centered">
+                <h2>Education Details</h2>
+                 Reviews
+                 
+                Installation
+                Support
+                 
+                Development
+                Description
+                BEST USER PROFILE & MEMBERSHIP PLUGIN FOR WORDPRESSto your site and is perfect.
+              </div>
+          </div><br>
+          <div class="ui grid">
+              <div class="four wide column centered"> 
+                <div class="ui relaxed divided list">
+                    <div class="item">
+                        <i class="large github middle aligned icon"></i>
+                      <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI</a>
+                        <div class="description">Updated 10 mins ago</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                        <i class="large github middle aligned icon"></i>
+                      <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+                        <div class="description">Updated 22 mins ago</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <i class="large github middle aligned icon"></i>
+                      <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Meteor</a>
+                        <div class="description">Updated 34 mins ago</div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="three wide column centered">
+                <div class="ui raised segment">
+                    1
+                  </div>
+                  <div class="ui raised segment">
+                    2
+                  </div>
+                  <div class="ui raised segment">
+                    3
+                  </div>
+                </div>
+          </div> <br>
+          <div style="padding-left: 380px;">&nbsp;
+           <div class="ui  blue image label">
+            javascript
+            <i class="delete icon"></i>
+          </div>
+          <div class="ui teal image label">
+            Angular
+            <i class="delete icon"></i>
+          </div>
+          <div class="ui yellow image label">
+            Data Science
+            <i class="delete icon"></i>
+          </div>
+          <div class="ui  red image label">
+            Artifcial Inteligence
+            <i class="delete icon"></i>
+          </div>
+          <div class="ui  green image label">
+            Pyhton
+            <i class="delete icon"></i>
+          </div>
+        </div><br><br>
+        <div class="ui statistics" style="padding-left: 400px;">
+            <div class="statistic">
+              <div class="value">
+                <i class="small book icon"></i>22
+              </div>
+              <div class="label">
+                Faves
+              </div>
+            </div>
+            <div class="statistic">
+              <div class="value">
+                31,200
+              </div>
+              <div class="label">
+                Views
+              </div>
+            </div>
+            <div class="statistic">
+              <div class="value">
+                22
+              </div>
+              <div class="label">
+                Members
+              </div>
+            </div>
+          </div>
+      </fieldset>
+      <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+        <a href="#"><i class="fa fa-facebook-official"></i></a>
+        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-flickr"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <p class="w3-medium">
+        Powered by <a href="https://www.talview.com/w3css/default.asp" target="_blank">Talview.com</a>
+        </p>
+      </footer>
+      
+<script>
+    function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+    </script>
+</body>
+</html>
