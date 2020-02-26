@@ -1,16 +1,22 @@
 <html>
-
-<head>
+ <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css"-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <script src="profile.js"></script>
-</head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/sematic.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="prof.js"></script>
+    <style type="text/css">
+        #stick1{
+            position: fixed;
+        }
+        </style>
+ </head>
 
-<body>
-    <!--style>
+ <body>
+     <!--style>
         body {
           font-family: "Lato", sans-serif;
         }
@@ -57,50 +63,48 @@
           .sidenav a {font-size: 18px;}
         }
         <style-->
-      <div class="ui  centered piled segment "  >    
-     <div class="ui red center aligned segment">
-        <p>    
-      <nav class="bar black">
-        <div class="ui labeled button" tabindex="0">
-            <div class="ui button">
-              <i class="user icon"></i>
-            </div>
-            <a class="ui basic label">
-              MyProfile
-            </a>
-          </div>
-          <div class="ui labeled button" tabindex="0">
-            <div class="ui button">
-              <i class="file alternate icon"></i>
-            </div>
-            <a class="ui basic label">
-              Application
-            </a>
-          </div>
-          <div class="ui labeled button" tabindex="0">
-            <div class="ui button">
-              <i class="briefcase icon"></i>
-            </div>
-            <a class="ui basic label">
-              Job
-            </a>
-          </div>
-        </p>
-      </div>
-        <div class="ui center aligned segment">
-            <p>
-            <!--a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a-->
-            <button class="ui red basic button">About</button>
-            <input type="text" placeholder="Search...">
-             <button class="ui yellow basic button">Search</button>
-            <button class="ui orange basic button">message</button>
-            <button class="ui olive basic button">contact</button>
+     <div class="ui stackable container menu">
+        <div class="ui red center aligned segment">
+            <p>                 <div class="ui labeled button" tabindex="0">
+                <div class="ui button">
+                            <i class="user icon"></i>
+                        </div>
+                        <a class="ui basic label">
+                            MyProfile
+                        </a>
+                    </div>
+                    <div class="ui labeled button" tabindex="0">
+                        <div class="ui button">
+                            <i class="file alternate icon"></i>
+                        </div>
+                        <a class="ui basic label">
+                            Application
+                        </a>
+                    </div>
+                    <div class="ui labeled button" tabindex="0">
+                        <div class="ui button">
+                            <i class="briefcase icon"></i>
+                        </div>
+                        <a class="ui basic label">
+                            Job
+                        </a>
+                    </div>
             </p>
         </div>
-      </nav>
-      
-    </div>
-    <fieldset>
+     </div>
+     <div class="ui segment" id="stick1" >
+        <div class="ui sticky style="width:272px !important; height: 262.531px !important; left:1080.5px">
+            <p>
+                <!--a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a-->
+                <button class="ui red basic button">About</button><br>
+                <input type="text" placeholder="Search..."><br>
+                <button class="ui yellow basic button">Search</button><br>
+                <button class="ui orange basic button">message</button><br>
+                <button class="ui olive basic button">contact</button><br>
+            <p>
+        </div>  
+    
+     <fieldset>
         <legend align="center">
             <div class="ui centered card">
                 <div class="image">
@@ -132,7 +136,8 @@
                 Description
                 BEST USER PROFILE & MEMBERSHIP PLUGIN FOR WORDPRESSto your site and is perfect.
             </div>
-        </div><br>
+        </div>
+        <br>
         <div class="ui grid">
             <div class="four wide column centered">
                 <div class="ui relaxed divided list">
@@ -170,13 +175,13 @@
                     3
                 </div>
             </div>
-        </div> <br>
+        </div> 
+        <br>
         <div class="ui center aligned header">
             <div class="ui  blue image label">
                 javascript
                 <i class="delete icon"></i>
             </div>
-
             <div class="ui teal image label">
                 Angular
                 <i class="delete icon"></i>
@@ -193,7 +198,8 @@
                 Pyhton
                 <i class="delete icon"></i>
             </div>
-        </div><br><br>
+        </div>
+        <br><br>
         <div class="ui  statistics">
             <div class=" right floated statistic">
                 <div class="value">
@@ -219,9 +225,9 @@
                     Members
                 </div>
             </div>
-        </div>
-    </fieldset>
-    <footer class="container  centered black ">
+        </div>    
+     </fieldset>
+     <footer class="container  centered black ">
         <a href="#"><i class="facebook icon"></i></a>
         <a href="#"><i class="pinterest icon"></i></a>
         <a href="#"><i class="twitter icon"></i></a>
@@ -230,8 +236,7 @@
         <p class="medium">
             Powered by <a href="https://www.talview.com/w3css/default.asp" target="_blank">Talview.com</a>
         </p>
-    </footer>
-
-</body>
+     </footer>
+ </body>
 
 </html>

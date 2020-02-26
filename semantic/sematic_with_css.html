@@ -34,18 +34,20 @@
           color: #818181;
           display: block;
           transition: 0.3s;
+          text-align: left;
         }
         
         .sidenav a:hover {
           color: #f1f1f1;
         }
-        
+      
         .sidenav .closebtn {
-          position: absolute;
+          position: static;
           top: 0;
           right: 25px;
           font-size: 36px;
           margin-left: 50px;
+          text-align: right;
         }
         
         
@@ -59,16 +61,19 @@
         <a href="#profile" class="w3-button w3-bar-item">Profile</a>
         <a href="#job" class="w3-button w3-bar-item">JOB</a>
         <a href="#contact" class="w3-button w3-bar-item">Contact</a>
-        <div id="mySidenav" class="sidenav">
+        <a href="file:///home/local/INTERNAL/shrawani.m/yellow/semantic/login.html" class="w3-button w3-bar-item">Logout</a>        <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Clients</a>
             <a href="#">Contact</a>
-          </div>
+        </div>
           <span style="font-size:30px;cursor:pointer;float:right" onclick="openNav()">&#9776;</span>
     </nav>
-    <fieldset style="background-color: rgba(10, 205, 240, 0.849);">
+    <fieldset style="background: #544a7d;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffd452, #544a7d);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ffd452, #544a7d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    " >
         <legend align="center"><div class="ui centered card">
             <div class="image">
               <img src="kristy.png">
