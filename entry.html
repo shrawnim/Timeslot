@@ -9,12 +9,12 @@
   <h2>US 1</h2>
   </nav>
 
-<div >
+<div class="w3-container w3-teal">
   <h2>Add Expense details</h2>
 </div>
   <h3>  Billing</h3>
 </div>
-<form >  
+<form class="w3-container w3-teal" >  
   <label>CLIENT :</label>
   <select id="cli">
    <option value="op1">Op1</option>
@@ -24,39 +24,38 @@
 </form>
 <br>
 
-<form>     
+<form class="w3-container w3-teal" action="/action_page.php" >     
   <label>Expense Category</label><br><br>
-  <input  type="radio" name="CAT" value="food">Food
-  <input type="radio" name="CAT" value="travel">Travel
-  <input  type="radio" name="CAT" value="Stay">Stay
-  <input type="radio" name="CAT" value="others">Others<br>
+  <input type="radio" id='b1' name="CAT" value="food">Food
+  <input type="radio" id='b2'  name="CAT" value="travel">Travel
+  <input type="radio" id='b3' name="CAT" value="Stay">Stay
+  <input type="radio" id='b4'  name="CAT" value="others">Others<br>
 <p></p>
  <label>Remarks</label>
    <input type="text" name="CAt" value=" ">
-<p></p>
-</form>
-
-<form  action="/action_page.php"> 
+<p></p> 
   <label> Bill and Invoice </label><br>   
   <label for="myfile">Select a file:</label>
-  <input type="file" id="myfile" name="myfile" multiple>
+  <input type="file" id="bill" name="myfile" multiple>
 <p></p>
 </form>
-
-<form >     
+<form class="w3-container w3-teal">     
   <label>Bill date</label>
    <input type="date" name="billd">
   <label>Amount</label>
    <input type="text" name="amt" value=" ">
 </form><p></p>
-<h3>Food</h3>
-<form>     
+
+<div id="fosection" hidden>
+<form class="w3-container w3-box-4 w3-grey" > 
+  <h3>Food</h3>    
   <label>No of Dinners</label>
   <input type="text">
 <p></p>
-</form>
-<h3>Travel</h3>
-<form>  
+</form></div>
+
+<form id="trasection" hidden> 
+<h3>Travel</h3> 
   <label>Mode of transport:</label>
   <select id="mod">
    <option value="cab">cab</option>
@@ -71,8 +70,9 @@
   <input type="text">
 <p></p>
 </form>
+
+<form id="stsection" hidden>  
 <h3>Stay</h3>
-<form>  
   <label>From date:</label>
    <input type="date" name="hod">
   <label>To date:</label>
@@ -91,4 +91,42 @@
  </div>
 <p></p>
 </body>
+<script>
+let b1 = document.getElementById('b1');
+b1.onclick=()=>{
+   if(b1.checked){
+        document.getElementById('remarks').required=false;
+        document.getElementById('trasection').hidden=true;
+        document.getElementById('stsection').hidden=true;
+        document.getElementById('fosection').hidden=false;
+    }
+}
+let b2 = document.getElementById('b2');
+b2.onclick=()=>{
+   if(b2.checked){
+        document.getElementById('remarks').required=false;
+        document.getElementById('trasection').hidden=false;
+        document.getElementById('stsection').hidden=true;
+        document.getElementById('fosection').hidden=true;
+    }
+}
+let b3 = document.getElementById('b3');
+b3.onclick=()=>{
+   if(b3.checked){
+        document.getElementById('remarks').required=false;
+        document.getElementById('trasection').hidden=true;
+        document.getElementById('stsection').hidden=false;
+        document.getElementById('fosection').hidden=true;
+    }
+}
+let b4 = document.getElementById('b4');
+b4.onclick=()=>{
+   if(b4.checked){
+        document.getElementById('remarks').required=false;
+        document.getElementById('trasection').hidden=true;
+        document.getElementById('stsection').hidden=true;
+        document.getElementById('fosection').hidden=false;
+    }
+}
+</script>
 <html>
